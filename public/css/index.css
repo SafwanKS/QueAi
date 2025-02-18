@@ -1,12 +1,12 @@
 
 @font-face {
   font-family: customFonts;
-  src: url(../src/regularpromo.otf);
+  src: url(../src/linotte.otf);
 }
 
 *,
-*:after,
-*:before{
+*::after,
+*::before{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,7 +14,16 @@
   text-decoration: none;
   font-family: customFonts;
 }
-
+h1, h2, h3, h4, h5, h6{
+  padding: 0;
+  margin: 0;
+}
+h2{
+  font-weight: 300;
+}
+h3{
+  font-weight: 600;
+}
 html{
   scroll-behavior: smooth;
 }
@@ -88,14 +97,14 @@ main{
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  align-items: center;
-  padding-top: 100px;
+  padding-left: 50px;
+  padding-top: 60px;
+  padding-right: 50px;
   ddisplay: none;
 }
 .homeScreen img{
-  height: 150px;
-  width: 150px;
+  height: 70px;
+  width: 70px;
 }
 
 .chatScreen{
@@ -231,4 +240,35 @@ footer{
   background: #e6e6e6;
   border-radius: 10px 10px 0 0;
   padding: 10px;
+}
+
+.sidenav{
+  width: 270px;
+  height: 100%;
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
+}
+
+
+#scrolltxt {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-out {
+  transform: translateY(-100%);
+}
+
+.slide-in {
+  transform: translateY(100%);
+  animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

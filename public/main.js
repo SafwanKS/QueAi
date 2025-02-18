@@ -27,7 +27,7 @@ window.onload = () =>{
       
       <div class="homeScreen">
         <h2 style="text-align: center">How can i help <br> you today ?</h2>
-        <img src="./src/ai-filled.png" alt="">
+        <img src="./src/logosmall.png" alt="">
       </div>
       
       <div class="chatScreen">
@@ -52,6 +52,8 @@ window.onload = () =>{
     </footer>
       
       `
+      
+      alert(decodeURI(location.pathname.split('/').pop()))
       var prompt
       var homePage = document.querySelector('.homeScreen')
       var chatScreen = document.querySelector('.chatScreen')
@@ -104,7 +106,7 @@ inputBox.addEventListener('input', () => {
         setTimeout(()=>{
           chatList.innerHTML += `
             <li class="chatItem">
-              <img src="./src/ai-filled.png" alt="./src/ai-filled.png">
+              <img src="./src/logosmall.png" alt="./src/logosmall.png">
               <pre id="msgTxt"class="think loadingBar">Thinking...</pre>
             </li>
           `
@@ -213,5 +215,5 @@ inputBox.addEventListener('input', () => {
   }
   
   const app = new QueAi()
-  app.mainActivity()
+  //app.mainActivity()
 }

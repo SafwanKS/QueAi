@@ -21,8 +21,11 @@
       You need to enable JavaScript to use this app. Thanks for supporting us. Keep supporting.
     </noscript>
     
+    <div class="sidenavv">
+      
+    </div>
     
-  <!--  <header>
+    <header>
       <div class="headcol">
         <div class="smallBtn">
         <span class="material-symbols-outlined">menu</span>
@@ -40,8 +43,11 @@
     <main>
       
       <div class="homeScreen">
-        <h2 style="text-align: center">How can i help <br> you today ?</h2>
-        <img src="./src/ai-filled.png" alt="">
+        <img src="../src/logosmall.png">
+        <br> 
+        <h1>What can i help with?</h1>
+        <h4 style="padding-top: 20px;">Ask Que Ai to write about </h4>
+        <h4 id="scrolltxt">Global Warming</h4>
       </div>
       
       <div class="chatScreen">
@@ -71,10 +77,44 @@
         <span class="material-symbols-outlined">send</span>
       </div>
       </div>
-    </footer> -->
+    </footer> 
   </div>
   
   <script type="module" src="main.js"></script>
+  <script>
+    var sctxt = document.getElementById('scrolltxt');
+
+const topics = [
+"Space exploration",
+"Artificial intelligence",
+"Climate change",
+"Mental health",
+"Technological advancements",
+"History of science",
+"World cultures",
+"Future of work",
+"Sustainable living",
+"Ancient civilizations"
+];
+
+var i = 0;
+
+var changeTopic = () => {
+sctxt.classList.add('slide-out');
+setTimeout(() => {
+sctxt.innerHTML = topics[i];
+sctxt.classList.remove('slide-out');
+sctxt.classList.add('slide-in');
+setTimeout(() => {
+sctxt.classList.remove('slide-in');
+}, 500);
+i === topics.length - 1 ? i = 0 : i++;
+changeTopic();
+}, 500);
+};
+
+changeTopic();
+  </script>
 </body>
 
 </html>
