@@ -24,11 +24,14 @@ window.onload = () =>{
       </div>
     </header>
     <main>
-      
       <div class="homeScreen">
-        <h2 style="text-align: center">How can i help <br> you today ?</h2>
-        <img src="./src/logosmall.png" alt="">
+        <img src="../src/logosmall.png">
+        <br> 
+        <h1>What can i help with?</h1>
+        <h4 style="padding-top: 20px;">Ask Que Ai to write about </h4>
+        <h4 id="scrolltxt">Global Warming</h4>
       </div>
+      
       
       <div class="chatScreen">
         <ul class="chatList">
@@ -53,7 +56,7 @@ window.onload = () =>{
       
       `
       
-      alert(decodeURI(location.pathname.split('/').pop()))
+      //alert(decodeURI(location.pathname.split('/').pop()))
       var prompt
       var homePage = document.querySelector('.homeScreen')
       var chatScreen = document.querySelector('.chatScreen')
@@ -64,6 +67,33 @@ window.onload = () =>{
       var typeBox = document.querySelector('.typeBox')
       
       sendBtn.classList.add('inactive')
+      
+      var sctxt = document.getElementById('scrolltxt');
+
+    const topics = [
+      "Space exploration",
+      "Artificial intelligence",
+      "Climate change",
+      "Mental health",
+      "Technological advancements",
+      "History of science",
+      "World cultures",
+      "Future of work",
+      "Sustainable living",
+      "Ancient civilizations"
+    ];
+
+    var i = 0;
+
+    var changeTopic = () => {
+      setTimeout(() => {
+        sctxt.innerHTML = topics[i];
+        i === topics.length - 1 ? i = 0 : i++;
+        changeTopic();
+      }, 2100);
+    };
+
+    changeTopic();
       
       
       
@@ -215,5 +245,5 @@ inputBox.addEventListener('input', () => {
   }
   
   const app = new QueAi()
-  //app.mainActivity()
+  app.mainActivity()
 }

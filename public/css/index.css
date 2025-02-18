@@ -252,23 +252,28 @@ footer{
 
 
 #scrolltxt {
-  transition: transform 0.5s ease-in-out;
+  animation: slide 1.5s infinite;
 }
 
-.slide-out {
-  transform: translateY(-100%);
-}
-
-.slide-in {
-  transform: translateY(100%);
-  animation: slide-in 0.5s forwards;
-}
-
-@keyframes slide-in {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
+@keyframes slide{
+  0%{
     transform: translateY(0);
+    opacity: 1;
+  }
+  25%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60%{
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  75%{
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
   }
 }
